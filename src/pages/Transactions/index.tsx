@@ -16,7 +16,7 @@ interface Transactions {
   type: "income" | "outcome";
   price: number;
   category: string;
-  createAt: string;
+  createdAt: string;
 }
 
 export function Transactions() {
@@ -42,7 +42,7 @@ export function Transactions() {
                   </td>
                   <td>{transaction.category}</td>
                   <td>
-                    {dateFormatter.format(new Date(transaction.createAt))}
+                    {dateFormatter.format(new Date(transaction.createdAt))}
                   </td>
                 </tr>
               );
