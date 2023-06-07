@@ -8,7 +8,7 @@ import {
   TransactionsContainer,
   TransactionsTable,
 } from "./styles";
-import { useContext } from "react";
+import { useContextSelector } from "use-context-selector";
 
 interface Transactions {
   id: number;
@@ -20,7 +20,9 @@ interface Transactions {
 }
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionsContext);
+  const transactions = useContextSelector(TransactionsContext, (context) => {
+    return context.transactions;
+  });
 
   return (
     <div>
